@@ -15,8 +15,8 @@ jobs:
     
     - name: install lateste yarn
       run: corepack prepare yarn@stable --activate
-    - name: Activate Latest yarn
-      run: yarn set version stable
+    #- name: Activate Latest yarn
+    #  run: yarn set version stable
 
     - name: Build react app
       run: yarn build
