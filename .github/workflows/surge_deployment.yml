@@ -7,14 +7,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Install Node.js
-      uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v3
       with:
-        node-version: 12
-    - uses: borales/actions-yarn@2.0.0
-      with:
-          cmd: install
+        node-version: 16.17
+    
+    - name: install lateste yarn
+      run: corepack prepare yarn@stable --activate
+    - name: Activate Latest yarn
+      run: yarn set version stable
+
     - name: Build react app
       run: yarn build
 
